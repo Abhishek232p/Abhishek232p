@@ -50,7 +50,7 @@ export function InstructorDetail() {
   const createBooking = trpc.marketplace.learn.createBooking.useMutation();
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("drivenow-pickup-point");
+      const saved = localStorage.getItem("eazyservx-pickup-point") || localStorage.getItem("drivenow-pickup-point");
       if (!saved) return;
       const point = JSON.parse(saved) as { address?: string };
       if (point.address) setPickup(point.address);

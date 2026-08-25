@@ -16,6 +16,11 @@
 - [x] Add responsive visual validation, Vitest coverage, and error/empty/loading state checks for the core flows.
 - [x] Add README documentation, environment-variable template, third-party asset notices, and GitHub-ready project metadata.
 - [ ] Push the completed codebase to the user-approved GitHub repository.
+- [x] Prepare the user-supplied original EazyservX logo with a transparent background and use it as the application brand asset.
+- [x] Replace temporary drivenow branding with the approved EazyservX brand identity across public and workspace navigation.
+- [x] Remove remaining visible temporary drivenow copy from public and workspace screens, retaining only legacy technical keys where required for data continuity.
+- [x] Verify the final EazyservX public and workspace navigation treatment after the copy sweep.
+- [x] Verify EazyservX branding on learner, instructor, admin, and account workspace routes after the final copy sweep.
 - [x] Handle Stripe failed and refunded outcomes with verified webhooks and user-visible payment-state treatment.
 - [x] Bind instructor booking selection to actual availability windows and persist the selected map pickup coordinates.
 - [x] Add learner booking confirmation, booking timeline, and cancellation controls to the bookings hub.

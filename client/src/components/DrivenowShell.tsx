@@ -12,19 +12,18 @@ const nav = [
 
 export function DrivenowLogo({ inverse = false }: { inverse?: boolean }) {
   return (
-    <Link href="/" className={`inline-flex items-center gap-2.5 ${inverse ? "text-white" : "text-[#141414]"}`}>
-      <span className="grid h-8 w-8 place-items-center border-2 border-current text-[10px] font-black tracking-[-0.2em]">DN</span>
-      <span className="font-display text-xl font-extrabold tracking-[-0.07em]">drivenow</span>
+    <Link href="/" className={`inline-flex items-center ${inverse ? "rounded-sm bg-white px-2 py-1.5" : ""}`} aria-label="EazyservX home">
+      <img src="/manus-storage/eazyservx-logo-transparent-cropped_7b209dc9.png" alt="EazyservX — Every Service. Made Easy." className="h-12 w-auto object-contain sm:h-14" />
     </Link>
   );
 }
 
-export function AppHeader({ eyebrow = "INDIA / ONE METRO" }: { eyebrow?: string }) {
+export function AppHeader({ eyebrow = "INDIA / LOCAL SERVICE NETWORK" }: { eyebrow?: string }) {
   const { user, isAuthenticated } = useAuth();
   const [location] = useLocation();
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-[#e5e6e3]/90 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between gap-3">
+      <div className="container flex h-20 items-center justify-between gap-3">
         <DrivenowLogo />
         <div className="hidden items-center gap-4 text-[10px] font-bold tracking-[0.18em] text-black/55 sm:flex">
           <span>{eyebrow}</span>
@@ -62,11 +61,11 @@ export function LearnerShell({ children, title, action }: { children: ReactNode;
 
 export function WorkspaceHeader({ mode, title, children }: { mode: "TEACH" | "ADMIN"; title: string; children?: ReactNode }) {
   return <div className="min-h-screen bg-[#141414] text-[#f5f5f2]">
-    <header className="border-b border-white/15"><div className="container flex h-16 items-center justify-between"><DrivenowLogo inverse /><span className="rounded-full border border-white/20 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white/70">{mode}</span></div></header>
+    <header className="border-b border-white/15"><div className="container flex h-20 items-center justify-between"><DrivenowLogo inverse /><span className="rounded-full border border-white/20 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white/70">{mode}</span></div></header>
     <main className="container py-7"><p className="eyebrow text-white/45">{mode} WORKSPACE</p><h1 className="mt-1 font-display text-4xl font-extrabold tracking-[-0.07em]">{title}</h1>{children}</main>
   </div>;
 }
 
-export function AccessDenied({ title = "Sign in to continue", description = "Use your drivenow account to access this workspace." }: { title?: string; description?: string }) {
+export function AccessDenied({ title = "Sign in to continue", description = "Use your EazyservX account to access this workspace." }: { title?: string; description?: string }) {
   return <div className="grid min-h-[65vh] place-items-center px-5 text-center"><div className="max-w-sm"><div className="mx-auto mb-5 grid h-14 w-14 place-items-center border-2 border-black"><ShieldCheck className="h-6 w-6" /></div><h1 className="font-display text-3xl font-extrabold tracking-[-0.06em]">{title}</h1><p className="mt-3 text-sm leading-6 text-black/60">{description}</p><Link href="/start" className="btn-primary mt-6">Secure sign in</Link></div></div>;
 }

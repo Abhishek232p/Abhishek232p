@@ -16,7 +16,7 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function RequireInstructor({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, loading } = useAuth();
   if (loading) return <div className="grid min-h-screen place-items-center bg-[#141414] text-[10px] font-bold tracking-[0.18em] text-white/55">LOADING WORKSPACE</div>;
-  if (!isAuthenticated) return <div className="min-h-screen bg-[#e5e6e3]"><AccessDenied title="Sign in to teach" description="Use your drivenow account to submit an instructor application and manage your training route." /></div>;
+  if (!isAuthenticated) return <div className="min-h-screen bg-[#e5e6e3]"><AccessDenied title="Sign in to teach" description="Use your EazyservX account to submit an instructor application and manage your training route." /></div>;
   return <>{children}</>;
 }
 
