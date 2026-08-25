@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, notifications, profiles, roleMemberships, type User, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -90,3 +90,32 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+export async function ensureMarketplaceProfile(user: User) {
+  const db = await getDb();
+  if (!db) throw new Error("Database is unavailable");
+  await db.insert(profiles).values({ userId: user.id, fullName: user.name?.trim() || "drivenow member" }).onDuplicateKeyUpdate({
+    set: { fullName: user.name?.trim() || "drivenow member" },
+  });
+  await db.insert(roleMemberships).values({ userId: user.id, role: "learner", status: "enabled" }).onDuplicateKeyUpdate({ set: { status: "enabled" } });
+  return (await db.select().from(profiles).where(eq(profiles.userId, user.id)).limit(1))[0];
+}
+
+export async function createAppNotification(input: { recipientUserId: number; bookingId?: number; notificationType: string; title: string; body: string; scheduledFor?: Date }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database is unavailable");
+  await db.insert(notifications).values({
+    recipientUserId: input.recipientUserId,
+    bookingId: input.bookingId,
+    notificationType: input.notificationType,
+    title: input.title,
+    body: input.body,
+    scheduledFor: input.scheduledFor,
+  });
+}
+
+export async function getNotificationsForUser(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(notifications).where(eq(notifications.recipientUserId, userId)).orderBy(desc(notifications.createdAt)).limit(30);
+}

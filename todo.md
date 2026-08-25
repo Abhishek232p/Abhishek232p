@@ -1,0 +1,26 @@
+# Project TODO
+
+- [x] Define Drizzle schema and migration for dual-role profiles, instructor applications, availability, bookings, booking events, ratings, verification records, payment records, and notification records.
+- [x] Add typed tRPC procedures with role-aware authorization for discovery, booking lifecycle, instructor availability, lesson completion, ratings, verification review, and payment status handling.
+- [x] Configure a secure payment integration foundation and expose a checkout flow with clear pending, paid, failed, and refunded states.
+- [x] Create a near-black and cool-gray brutalist mobility design system with accessible color contrast, 44px touch targets, and reduced-motion-safe transitions.
+- [x] Build a public landing page with learner, instructor, and admin entry points and restrained CSS/SVG motion.
+- [x] Build shared sign-in, role selection, learner onboarding, role switching, and protected route behavior.
+- [x] Build learner discovery with comparison cards, filters, Google Maps proximity markers, and location fallback states.
+- [x] Build instructor detail, package selection, availability slot selection, pickup/meeting-point selection, booking summary, and payment checkout screens.
+- [x] Build learner booking confirmation, bookings hub, booking timeline, cancellation treatment, and rating submission screens.
+- [x] Build instructor onboarding, KYC/application progress, document-upload state, verification status, availability schedule, and profile controls.
+- [x] Build instructor incoming-jobs, accept/decline, active lesson, completion, earnings, and payout-status screens.
+- [x] Build an admin verification queue for instructor review and approval-status updates.
+- [x] Add in-app notification records and scheduled reminder foundations for booking, verification, cancellation, and lesson lifecycle events.
+- [x] Add responsive visual validation, Vitest coverage, and error/empty/loading state checks for the core flows.
+- [x] Add README documentation, environment-variable template, third-party asset notices, and GitHub-ready project metadata.
+- [ ] Push the completed codebase to the user-approved GitHub repository.
+- [x] Handle Stripe failed and refunded outcomes with verified webhooks and user-visible payment-state treatment.
+- [x] Bind instructor booking selection to actual availability windows and persist the selected map pickup coordinates.
+- [x] Add learner booking confirmation, booking timeline, and cancellation controls to the bookings hub.
+- [x] Add an instructor payout-status ledger alongside completed-lesson earnings.
+- [x] Expand tests for marketplace state transitions and validate authenticated workspace behavior where possible.
+- [x] Document optional external-delivery variables and provider safeguards in a source-controlled template without exposing secrets.
+- [x] Link the bookings hub and Stripe success return to the learner booking-detail confirmation route.
+- [x] Add procedure-level coverage for key role-protected marketplace flows and document protected-route validation limits.
