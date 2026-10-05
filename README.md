@@ -1,7 +1,5 @@
-##👋_Hi,I'm Abhishek!_
+FOUNDER/BUILDER THE MEN 
 
-# 💫 About Me:
-👩‍💻 Aspiring AI/ML Engineer | BSc Computer Science Student <br>💡 Passionate about AI-driven innovation, problem-solving, and networking technologies <br>🐍 Expertise: Python, Machine Learning, Web Technologies <br>🔎 Skills: Analytical Thinking, Teamwork, Adaptability, Communication <br>🚀 Quick Learner with a drive for growth and collaboration!
 
 
 ## 🌐 Socials:
